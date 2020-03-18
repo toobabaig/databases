@@ -36,7 +36,7 @@ Port number: 	3306
 
 the database we will be working on will be on phpadmin above
 we can use xampp as server, wich apache and mySQL modules
-and we can test our work individually on our own computer (local host), then merge our work back into github
+and we can test our work individually on our own computer (local host) from a branch, then merge our work back into github main repository
 
 the reason we are using not working on concordias server and database directly is because
 school is closed untill the end of the month and computer unacessible, and using puTTY ssh tunnelling forces us to use prompt commands
