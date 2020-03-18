@@ -31,3 +31,13 @@ Name: 		sql9328338
 Username: 	sql9328338
 Password: 	ZbhYnScRnZ
 Port number: 	3306
+
+---- setup before transfering project to concordia database and server
+
+the database we will be working on will be on phpadmin above
+we can use xampp as server, wich apache and mySQL modules
+and we can test our work individually on our own computer (local host), then merge our work back into github
+
+the reason we are using not working on concordias server and database directly is because
+school is closed untill the end of the month and computer unacessible, and using puTTY ssh tunnelling forces us to use prompt commands
+to edit/create folders, wich would take forever.
