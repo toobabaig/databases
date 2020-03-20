@@ -26,10 +26,6 @@ website features:
 There should be a way to modify the data in your database through your interface. It
 should at least be possible to add new patients, schedule new appointments and modify
 and delete existing appointments.
-
-
-
-
 There should also be a special feature that would normally be reserved for DBAs: a text
 area (probably on a different page) in which a user can type an SQL statement and
 execute it on the database. Results of the executed statement should be displayed in a
