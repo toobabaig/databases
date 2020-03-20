@@ -30,3 +30,8 @@ There should also be a special feature that would normally be reserved for DBAs:
 area (probably on a different page) in which a user can type an SQL statement and
 execute it on the database. Results of the executed statement should be displayed in a
 logical way. 
+
+non functional requirement:
+
+clear web UI to perform desired actions,
+should not take more than 2 minutes to fully understand how to use web application without assistance
