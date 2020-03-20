@@ -1,0 +1,36 @@
+
+web funtionality:
+
+A company owns a network of dental clinics and you need to design a database for them.
+Patients can make appointments to see a dentist at a clinic. Sometimes patients make
+appointments without knowing which dentist they are going to see. Dentists assign some
+treatments to be done on the patient. The treatments can be executed by dentists or by
+dental assistants. Bills are produced to record how much the patients need to pay for the
+treatments. One bill can contain the cost of many treatments done in one visit at a clinic.
+Besides dentists and dental assistants, there are also receptionists responsible for recording
+appointments and for processing the bill payments. 
+
+minimum queries needed to be performed:
+
+a. Get details of all dentists in all the clinics.
+b. Get details of all appointments for a given dentist for a specific week.
+c. Get details of all appointments at a given clinic on a specific date.
+d. Get details of all appointments of a given patient.
+e. Get the number of missed appointments for each patient (only for patients who have
+missed at least 1 appointment).
+f. Get details of all the treatments made during a given appointment.
+g. Get details of all unpaid bills. 
+
+website features:
+
+There should be a way to modify the data in your database through your interface. It
+should at least be possible to add new patients, schedule new appointments and modify
+and delete existing appointments.
+
+
+
+
+There should also be a special feature that would normally be reserved for DBAs: a text
+area (probably on a different page) in which a user can type an SQL statement and
+execute it on the database. Results of the executed statement should be displayed in a
+logical way. 
