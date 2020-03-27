@@ -6,7 +6,7 @@
 		<th>
 			<a href="index.php"><input type = "image" src="icons/home.png"></a>
 		</th>
-			<a href="../"><input type = "image" src="icons/backblue.png"></a>
+			<a href="index.php"><input type = "image" src="icons/backblue.png"></a>
 	  </tr>
 	 </table>
 </footer2>
