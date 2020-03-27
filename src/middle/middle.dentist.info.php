@@ -17,11 +17,11 @@
 <br>
 <div class = "middle">
 
-<form action="/action_page.php">
+<form action="dentist.getinfo.result.php" method="post">
 	Get all dentist from 
-		<select id="selectDentist1">
-		  <option value="volvo" selected="selected" >-- choose clinic --</option>
-		  <option value="saab">all clinic</option>
+		<select name="selectClinic1">
+		  <option value="choose" selected="selected" >-- choose clinic --</option>
+		  <option value="*">all clinic</option>
 		
 		
 		<?php
@@ -40,16 +40,16 @@
 		?>
 			
 			
-		<input type="submit" value="Search">
+		<input  type="submit" value="Search">
 		</select>
 </form> 
 <br>
 <br>
-<form action="/action_page.php">
+<form action="dentist.getinfo.result.php" method="post">
 	Get all info on dentist 
-		<select id="cars">
-	  <option value="volvo" selected="selected" >-- choose dentist --</option>
-	  <option value="saab">all dentist</option>
+		<select  name="selectDentist1">
+	  <option value="choose" selected="selected" >-- choose dentist --</option>
+	  <option value="*">all dentist</option>
 	  
 	  
 		<?php

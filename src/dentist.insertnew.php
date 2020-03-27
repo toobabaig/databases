@@ -16,7 +16,7 @@
 	
 		include_once 'middle/middle.dentist.info.php';
 	
-		include_once 'footer/footer2.php';
+		include_once 'footer/footer4.php';
 	?>
 	
 
