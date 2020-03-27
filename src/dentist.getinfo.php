@@ -12,9 +12,9 @@
 	<?php
 		include_once 'header/header1.php';
 	
-		include_once 'middle/middle1.php';
+		include_once 'middle/middle.dentist.info.php';
 	
-		include_once 'footer/footer1.php';
+		include_once 'footer/footer2.php';
 	?>
 	
 
