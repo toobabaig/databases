@@ -38,24 +38,20 @@ include_once 'includes/dbh.inc.php';
 	?>
 		
 	
-		
-	<?php
-	
-	
-		if ($checkResultClinic==1){
-			 echo "dentist  $name $lastName successfully added, ID: ";
-			
-			while ( $row = mysqli_fetch_array($resultNewDentist)){								
-				$tempEID =  $row['EID'];																	
-				echo "$tempEID" ;																															 
-			}
-		}else{
-			echo "error: dentist not added";
-		}	
-		
-	
+		<div class = "middle">
+	<?php			
+			if ($checkResultClinic==1){
+				 echo "dentist  $name $lastName successfully added, ID: ";
+				
+				while ( $row = mysqli_fetch_array($resultNewDentist)){								
+					$tempEID =  $row['EID'];																	
+					echo "$tempEID" ;																															 
+				}
+			}else{
+				echo "error: dentist not added";
+			}				
 		?>
-		
+		</div>
 
   
 		
