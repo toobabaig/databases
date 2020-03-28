@@ -1,34 +1,31 @@
 <?php
 include_once 'includes/dbh.inc.php';
-		
+	
 	if (isset($_POST['selectDentist2'])){
 		
-		$selectValueDentist = $_POST["selectDentist2"];
-		if (strcmp($selectValueDentist, "*") ==0){
-			
-		$sqlDentist2 = "select * from dentist;";
-		$resultDentist2 = mysqli_query($conn, $sqlDentist2);
-		$checkResultDentist2 = mysqli_num_rows($resultDentist2);
-		
-		}else{
-			
-			$sqlDentist2 = "select * from dentist where dentist.EID = $selectValueDentist;";
-			
+		$selectValueDentist2 = $_POST["selectDentist2"];
+		if (strcmp($selectValueDentist2, "*") ==0 ){
+			$sqlDentist2 = "select * from dentist;";
 			$resultDentist2 = mysqli_query($conn, $sqlDentist2);
 			$checkResultDentist2 = mysqli_num_rows($resultDentist2);
-		}
+			
+		}else{
+			
+			$sqlDentist2 = "select * from dentist where dentist.clinicID = $selectValueDentist2;";
+			$resultDentist2 = mysqli_query($conn, $sqlDentist2);
+			$checkResultDentist2 = mysqli_num_rows($resultDentist2);
+			}
 	}
-		
-		
-		
-		
+	
 	if (isset($_POST['selectDentist1'])){
+		
 		$selectValueDentist = $_POST["selectDentist1"];
 		if (strcmp($selectValueDentist, "*") ==0){
 		$sqlDentist = "select * from dentist;";
 		$resultDentist = mysqli_query($conn, $sqlDentist);
 		$checkResultDentist = mysqli_num_rows($resultDentist);
 		}else{
+			
 			$sqlDentist = "select * from dentist where dentist.EID = $selectValueDentist;";
 			
 			$resultDentist = mysqli_query($conn, $sqlDentist);
@@ -57,12 +54,11 @@ include_once 'includes/dbh.inc.php';
 		
 		
 		
-	<?php
-	
+	<?php 
 	if (isset($_POST['selectDentist2'])&& $checkResultDentist2 >0){
 		
-		echo "<table class = 'queryTable'>";
-				echo "	<tr class = 'queryTable'>";		
+				echo "<table class = 'queryTable'>";
+					
 				echo "<th class = 'queryTable'>EID</th>";
 				echo "<th class = 'queryTable'>clinicID</th>";
 				echo "<th class = 'queryTable'>SIN</th>";
