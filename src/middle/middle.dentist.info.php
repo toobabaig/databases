@@ -19,7 +19,7 @@
 
 <form action="dentist.getinfo.result.php" method="post">
 	Get all dentist from 
-		<select name="selectClinic1">
+		<select name="selectDentist2">
 		  <option value="choose" selected="selected" >-- choose clinic --</option>
 		  <option value="*">all clinic</option>
 		
@@ -59,11 +59,8 @@
 						$tempID =  $row['EID'];
 						$tempName =  $row['name'];
 						$templastName =  $row['lastName'];
-						echo "<option value='$tempID'> $tempID - $tempName $templastName  </option>" ;
-					
-					}
-				 
-				 
+						echo "<option value='$tempID'> $tempID - $tempName $templastName  </option>" ;					
+					}				 				 
 				}
 		?>
 	  
