@@ -12,7 +12,7 @@
 				<a href="dentist.getinfo.php">get info</a>
 				<a href="dentist.insertnew.php">insert new</a>
 				<a href="dentist.update.php">update</a>
-				<a href="#contact">delete</a>
+				<a href="dentist.delete.php">delete</a>
 			</div>
 		</div>
 	</th>
