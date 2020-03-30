@@ -6,7 +6,7 @@
     <th>
 		<div class="dropdown">
 		
-			<div class = "container"><img src="icons/dentist1.png" alt=" blackline"></div>
+			<div class = "container"><img src="icons/image.png" alt=" blackline"></div>
 			<button onclick="myFunctionDentist()" class="dropbtn">Dentist menu </button>
 			<div id="myDropdownDentist" class="dropdown-content">
 				<a href="dentist.getinfo.php" > <font color = "blue">get info</font></a>
@@ -19,7 +19,7 @@
 	
     <th>
 		<div class="dropdown">
-			<div class = "container"><img src="icons/clinic1.png" alt=" blackline"></div>
+			<div class = "container"><img src="icons/image2.png" alt=" blackline"></div>
 			<button onclick="myFunctionClinic()" class="dropbtn">Clinic menu</button>
 			<div id="myDropdownClinic" class="dropdown-content">
 				<a href="clinic.getinfo.php"><font color = "blue">get info</font></a>
@@ -31,7 +31,7 @@
 	</th>
     <th>
 		<div class="dropdown">
-			<div class = "container"><img src="icons/appointment1.png" alt=" blackline"></div>
+			<div class = "container"><img src="icons/image3.png" alt=" blackline"></div>
 			<button onclick="myFunctionAppointment()" class="dropbtn">Appointment menu</button>
 			<div id="myDropdownAppointment" class="dropdown-content">
 				<a href="appointment.getinfo.php"><font color = "blue">get info</font></a>
@@ -44,7 +44,7 @@
     <th>
 	
 	<div class="dropdown">
-			<div class = "container"><img src="icons/bill1.png" alt=" blackline"></div>
+			<div class = "container"><img src="icons/image4.png" alt=" blackline"></div>
 			<button onclick="myFunctionBill()" class="dropbtn">Bill menu</button>
 			<div id="myDropdownBill" class="dropdown-content">
 				<a href="bill.getinfo.php"><font color = "blue">get info</font></a>
