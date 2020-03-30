@@ -32,12 +32,12 @@
     <th>
 		<div class="dropdown">
 			<div class = "container"><img src="icons/appointment1.png" alt=" blackline"></div>
-			<button onclick="myFunction()" class="dropbtn">Appointment menu</button>
-			<div id="myDropdownDentist" class="dropdown-content">
-				<a href="#home">get info</a>
-				<a href="#about">insert new</a>
-				<a href="#contact">update</a>
-				<a href="#contact">delete</a>
+			<button onclick="myFunctionAppointment()" class="dropbtn">Appointment menu</button>
+			<div id="myDropdownAppointment" class="dropdown-content">
+				<a href="appointment.getinfo.php"><font color = "blue">get info</font></a>
+				<a href="appointment.insertnew.php"><font color = "brown">insert new</font></a>
+				<a href="appointment.update.php"> <font color = "green">update</font></a>
+				<a href="appointment.delete.php"><font color = "red">delete</font></a>
 			</div>
 		</div>	
 	</th>
@@ -45,12 +45,12 @@
 	
 	<div class="dropdown">
 			<div class = "container"><img src="icons/bill1.png" alt=" blackline"></div>
-			<button onclick="myFunction()" class="dropbtn">Bill menu</button>
-			<div id="myDropdownDentist" class="dropdown-content">
-				<a href="#home">get info</a>
-				<a href="#about">insert new</a>
-				<a href="#contact">update</a>
-				<a href="#contact">delete</a>
+			<button onclick="myFunctionBill()" class="dropbtn">Bill menu</button>
+			<div id="myDropdownBill" class="dropdown-content">
+				<a href="bill.getinfo.php"><font color = "blue">get info</font></a>
+				<a href="bill.insertnew.php"><font color = "brown">insert new</font></a>
+				<a href="bill.update.php"> <font color = "green">update</font></a>
+				<a href="bill.delete.php"><font color = "red">delete</font></a>
 			</div>
 		</div>	
 	</th>
