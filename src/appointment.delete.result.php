@@ -74,7 +74,7 @@ include_once 'includes/dbh.inc.php';
 			echo "</table>";
 		?>
 		
-		<input  name="deleteAppointmentButton" type="submit" value="delete clinic">
+		<input  name="deleteAppointmentButton" type="submit" value="delete appointment">
 	</form>
 	<?php
 		include_once 'footer/footer6.php';

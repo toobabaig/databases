@@ -4,14 +4,13 @@ include_once 'includes/dbh.inc.php';
 	if (isset($_POST['submitButton1'])){
 		
 		$inputDate1 = $_POST['inputDate1'];
-		echo "$inputDate1";
+
 		$inputDate2 = $_POST['inputDate2'];
-			echo "$inputDate2";
+	
 		$inputClinic = $_POST['inputClinic'];
-			echo "$inputClinic";
+
 		$inputPatient = $_POST['inputPatient'];
-			echo "$inputPatient";
-			echo "<br>";
+	
 		$sqlQuery = "select * from appointment ";
 	
 		
@@ -19,7 +18,7 @@ include_once 'includes/dbh.inc.php';
 		$varDateInputed = "false";
 		$varClinicInputed ="false";
 		if(strcmp($inputDate1,'yyyy-mm-dd') != 0 || strcmp($inputDate2,'yyyy-mm-dd') != 0){
-			echo "insect";
+			
 			$varDateInputed = "true";
 			if (strcmp($inputDate1,'yyyy-mm-dd') != 0){
 				$sqlQuery = "select * from appointment where dateOfAppointmentScheduled >= '$inputDate1' ";			
@@ -30,7 +29,7 @@ include_once 'includes/dbh.inc.php';
 			$sqlQuery = "select * from appointment  where dateOfAppointmentScheduled <= '$inputDate2' ";
 			}
 		}
-		echo $sqlQuery;
+	
 		if (strcmp($inputClinic,'*') != 0){
 			$varClinicInputed = "true";
 			if (strcmp($varDateInputed,'true') == 0){
@@ -39,8 +38,7 @@ include_once 'includes/dbh.inc.php';
 				$sqlQuery = $sqlQuery ." where clinicID = $inputClinic ";
 			}			
 		}
-		echo "<br>";
-		echo $sqlQuery;
+	
 		
 		if(strcmp($inputPatient,'*') != 0){
 			if (strcmp($varDateInputed,'true') == 0 || strcmp($varClinicInputed,'true') == 0){
@@ -49,9 +47,9 @@ include_once 'includes/dbh.inc.php';
 				$sqlQuery =  $sqlQuery." where patientID = $inputPatient ";
 			}
 		}
-		echo "<br>";
+	
 		$sqlQuery =  $sqlQuery." ; ";
-		echo $sqlQuery;
+	
 		
 		//$sqlQuery = "
 		//				select * 
@@ -147,6 +145,11 @@ include_once 'includes/dbh.inc.php';
 				}						 
 			}
 			echo "</table>";
+			if (isset($_POST['submitButton1'])&& $checkResultQuery ==0){
+				echo "<div class ='middle'>";
+				echo "no appointments found";
+				echo "</div>";
+			}
 		?>
 		
 		
@@ -191,13 +194,14 @@ include_once 'includes/dbh.inc.php';
 					echo "<td value='$temp9' class = 'queryTable'> $temp9  </td>" ;
 					
 
-					echo "</tr>" ;
-				
-				}						 
+					echo "</tr>" ;				
+				}
+				echo "</table>";					
 			}
-			echo "</table>";
-			if ($checkResultQuery2 ==0){
+			if (isset($_POST['submitButton2'])&& $checkResultQuery2 ==0){
+				echo "<div class ='middle'>";
 				echo "no appointments found";
+				echo "</div>";
 			}
 		?>
 		

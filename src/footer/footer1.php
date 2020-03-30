@@ -1,4 +1,4 @@
 
 <footer>
-<p> DBA mode<p>
+<p> <a href = "dbamode.php">DBA mode</a><p>
 </footer>
