@@ -25,6 +25,11 @@
 	$resultAppointment = mysqli_query($conn, $sqlAppointment);
 	$checkResultAppointment = mysqli_num_rows($resultAppointment);
 	
+	$sqlTreatment = "select * from treatment;";
+	$resultTreatment = mysqli_query($conn, $sqlTreatment);
+	$checkResultTreatment = mysqli_num_rows($resultTreatment);
+
+	
 	
 
 ?>
@@ -50,7 +55,7 @@
 					<th class = 'queryTable'>dentistID</th>
 					
 					<th class = 'queryTable'>clinicID</th>
-					<th class = 'queryTable' >treatmentID_____</th>	
+					<th class = 'queryTable' >treatmentID______________</th>	
 					<th class = 'queryTable'>treatmentCharge</th>	
 					<th class = 'queryTable'>amountPaid</th>	
 					<th class = 'queryTable'>dateOfTreatment</th>	
@@ -132,6 +137,7 @@
 										$tempEID =  $row['CID'];
 										$tempPName2 =  $row['clinicName'];
 										
+										
 																		
 										echo "<option value='$tempEID'> $tempEID - $tempPName2  </option>" ;																									
 									}
@@ -142,15 +148,27 @@
 											
 					</td>
 					<td value='treamentListID' class = 'queryTable' >  
-							rootCanal<input type="checkbox" id="'1" name="'root canal" value="'root canal">
-							<br>
-							toothRemoval<input type="checkbox" id="2" name="tooth removal" value="tooth removal">
-								<br>
-							cleaning<input type="checkbox" id="3" name="'cleaning'" value="'cleaning'">				
+							<?php
+							if ($checkResultTreatment >0){
+								
+									while ( $row = mysqli_fetch_array($resultTreatment)){								
+										$TID =  $row['TID'];
+										$name =  $row['name'];
+										$cost =  $row['cost'];
+																		
+										echo "<input type='checkbox' id='$TID' name='TID[]' value='$TID' >$TID - $name $cost $</input> <br/>";																								
+									}
+							}
+							
+							?>	
 					</td>
-					<td value='treatmentCharge' class = 'queryTable'>  <input type="text" name="treatmentCharge" value ="$ total" >  </td>
-					<td value='amountPaid' class = 'queryTable'>  <input type="text"  name="amountPaid" value = "$ total" >  </td>
-					<td value='dateOfTreatment' class = 'queryTable'>  <input type="text" name="dateOfTreatment"  value = "yyyy-mm-dd"> </td>
+					
+					<td value='treatmentCharge' class = 'queryTable'>  <input type="text" name="treatmentCharge" value ="0000.00" >  </td>
+					<td value='amountPaid' class = 'queryTable'>  <input type="text"  name="amountPaid" value = "0000.00" >  </td>
+					<?php 
+					$date =  date("Y/m/d") ;
+					echo "<td value='dateOfTreatment' class = 'queryTable'>  <input type='text' name='dateOfTreatment'  value = '$date'> </td> ";
+					?>
 				
 
 					

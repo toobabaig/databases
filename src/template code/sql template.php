@@ -25,3 +25,12 @@
 	$sqlBill = "select * from bill;";
 	$resultBill = mysqli_query($conn, $sqlBill);
 	$checkResultBill = mysqli_num_rows($resultBill);
+
+	$sqlTemp = "select * from treatment  where TID = $temp7;";
+	$resultTemp = mysqli_query($conn, $sqlTemp);
+	$checkResultTemp = mysqli_num_rows($resultTemp);
+
+
+	$sqlTemp = "select * from treatment  where TID = $temp7;";
+	$resultTemp = mysqli_query($conn, $sqlTemp);
+	$checkResultTemp = mysqli_num_rows($resultTemp);

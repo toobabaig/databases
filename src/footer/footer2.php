@@ -1,6 +1,7 @@
 </*home back buttons*/>
+<br/><br/>
+<footer2 >
 
-<footer2 class = "footer2">
 	<table>
 	  <tr>
 		<th>
