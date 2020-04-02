@@ -5,7 +5,7 @@
 Welcome to Clinic Manager!
 
 <br>
-<b><i>select * from mouth where theeth = true;</i><b>
+<b><i>select teeth from mouth where cavity = true;</i><b>
 </br>
 
 </p>

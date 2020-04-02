@@ -56,21 +56,21 @@ include_once 'includes/dbh.inc.php';
 		
 	<?php 
 	if (isset($_POST['selectDentist2'])&& $checkResultDentist2 >0){
+		?>
+		<table class = 'queryTable'>
 		
-				echo "<table class = 'queryTable'>";
-					
-				echo "<th class = 'queryTable'>EID</th>";
-				echo "<th class = 'queryTable'>clinicID</th>";
-				echo "<th class = 'queryTable'>SIN</th>";
-				echo "<th class = 'queryTable'>gender</th>";
-				echo "<th class = 'queryTable'>address</th>";
-				echo "<th class = 'queryTable'>name</th>";
-				echo "<th class = 'queryTable'>lastName</th>";
-				echo "<th class = 'queryTable'>phone</th>";
-				echo "<th class = 'queryTable'>email</th>";		
-				echo "<th class = 'queryTable'>availability</th>";						
-				echo "</tr>";
-						
+		<th class = 'queryTable'>EID</th>
+		<th class = 'queryTable'>clinicID</th>
+		<th class = 'queryTable'>SIN</th>
+		<th class = 'queryTable'>gender</th>
+		<th class = 'queryTable'>address</th>
+		<th class = 'queryTable'>name</th>
+		<th class = 'queryTable'>lastName</th>
+		<th class = 'queryTable'>phone</th>
+		<th class = 'queryTable'>email</th>		
+		<th class = 'queryTable'>availability</th>						
+		</tr>
+		<?php 				
 				while ( $row = mysqli_fetch_array($resultDentist2)){
 				
 					$temp1 =  $row['EID'];
@@ -83,10 +83,27 @@ include_once 'includes/dbh.inc.php';
 					$temp8 =  $row['phone'];
 					$temp9 =  $row['email'];
 					$temp10 =  $row['ptftv'];
+			?>
+			
+					<tr class = 'queryTable'>
+					
+					<?php echo "<td value='$temp1' class = 'queryTable'> $temp1  </td>" ;?>
+					<td value='$temp2' class = 'queryTable'> 
+<?php					
+						$sqlClinic = "select * from clinic where clinicID = $temp2;";
+						$resultClinic = mysqli_query($conn, $sqlClinic);
+						$checkResultClinic = mysqli_num_rows($resultClinic);
+						
+						if ($checkResultClinic>0){														
+							while ( $row = mysqli_fetch_array($resultDentist)){
+									
 							
-					echo "<tr class = 'queryTable'>";		
-					echo "<td value='$temp1' class = 'queryTable'> $temp1  </td>" ;
-					echo "<td value='$temp2' class = 'queryTable'> $temp2  </td>" ;
+							
+								echo "<td value='$temp3' class = 'queryTable'> $temp3  </td>" ;
+						}
+?>
+					</td>
+				<?php	
 					echo "<td value='$temp3' class = 'queryTable'> $temp3  </td>" ;
 					echo "<td value='$temp3' class = 'queryTable'> $temp4  </td>" ;
 					echo "<td value='$temp5' class = 'queryTable'> $temp5  </td>" ;

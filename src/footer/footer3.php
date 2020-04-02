@@ -5,9 +5,9 @@
 	<table>
 	  <tr>
 		<th>
-			<a href="index.php"><input type = "image" src="icons/home.png"></a>
+			<a href="index.php"><input type = "image" src="icons/hometeal2.png"></a>
 		</th>
-			<a href="javascript:history.back()"><input type = "image" src="icons/backblue.png"></a>
+			<a href="javascript:history.back()"><input type = "image" src="icons/backteal2.png"></a>
 	  </tr>
 	 </table>
 </footer2>

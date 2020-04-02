@@ -20,7 +20,7 @@
 <form action="dentist.getinfo.result.php" method="post">
 	Get all dentist from 
 		<select name="selectDentist2">
-		  <option value="choose" selected="selected" >-- choose clinic --</option>
+		 
 		  <option value="*">all clinic</option>
 		
 		
@@ -48,7 +48,7 @@
 <form action="dentist.getinfo.result.php" method="post">
 	Get all info on dentist 
 		<select  name="selectDentist1">
-	  <option value="choose" selected="selected" >-- choose dentist --</option>
+	
 	  <option value="*">all dentist</option>
 	  
 	  
