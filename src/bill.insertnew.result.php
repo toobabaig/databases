@@ -12,14 +12,18 @@ include_once 'includes/dbh.inc.php';
 		$temp8 =  $_POST['clinicID'];
 		
 		//$temp7 =  $_POST['treatmentID'];
-		//$temp8 =  $_POST['treatmentCharge'];
+		$tempB =  $_POST['treatmentCharge'];
 		$temp10 =  $_POST['amountPaid'];
-		$temp11 =  $_POST['dateOfTreatment'];		
-	}
+		$temp11 =  $_POST['dateOfTreatment'];
+
+
+		 
+		
+		
 	
 	$mysqlInsertNew = " 
-	INSERT INTO bill 	( patientID, appointmentID, receptionistID,dentistID, clinicID,amountPaid, dateOfTreatment)
-	VALUES 				($temp2 ,	$temp3,			$temp4,					$temp6,	 $temp8, 	'$temp10', '$temp11')
+	INSERT INTO bill 	( patientID, appointmentID, receptionistID,dentistID, clinicID,amountPaid, dateOfTreatment , treatmentCharge)
+	VALUES 				($temp2 ,	$temp3,			$temp4,					$temp6,	 $temp8, 	'$temp10', '$temp11', '$tempB')
 
 	;";
 
@@ -28,6 +32,8 @@ include_once 'includes/dbh.inc.php';
 	$sqlAppointment = "select * from bill where BID = (SELECT MAX(BID)FROM bill);";
 	$resultAppointment = mysqli_query($conn, $sqlAppointment);
 	$checkReturnAppointment = mysqli_num_rows($resultAppointment);
+	}
+	
 	
 	
 ?>
@@ -52,10 +58,21 @@ include_once 'includes/dbh.inc.php';
 			if ($checkReturnAppointment==1){
 				
 				while ( $row = mysqli_fetch_array($resultAppointment)){								
-					$tempAID =  $row['BID'];																																																				 
-				}
+					$BID =  $row['BID'];				
+				}												
+				 echo "bill successfully added, ID:  $BID";
+				 
+				 if(!empty($_POST['TID'])){
+			
+					foreach($_POST['TID'] as $treatmentID){					
+						$sqlTreamentList = "insert into treatmentList values ($temp2,$treatmentID,$BID);";
+						
+						$resultTreamentList = mysqli_query($conn, $sqlTreamentList);
+						
+							}
+						}
+					
 				
-				 echo "bill successfully added, ID:  $tempAID";
 				
 				
 			}else{

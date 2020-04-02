@@ -1,3 +1,6 @@
+	
+sql connect and results--------
+
 	$sqlPatient = "select * from patient;";
 	$resultPatient = mysqli_query($conn, $sqlPatient);
 	$checkResultPatient = mysqli_num_rows($resultPatient);
@@ -25,3 +28,23 @@
 	$sqlBill = "select * from bill;";
 	$resultBill = mysqli_query($conn, $sqlBill);
 	$checkResultBill = mysqli_num_rows($resultBill);
+
+	$sqlTemp = "select * from treatment  where TID = $temp7;";
+	$resultTemp = mysqli_query($conn, $sqlTemp);
+	$checkResultTemp = mysqli_num_rows($resultTemp);
+
+	$sqlTemp = "select * from treatment  where TID = $temp7;";
+	$resultTemp = mysqli_query($conn, $sqlTemp);
+	$checkResultTemp = mysqli_num_rows($resultTemp);
+
+sql output---
+
+if ($checkResultDentist >0){
+	while ( $row = mysqli_fetch_array($resultDentist)){
+					
+	$tempID =  $row['EID'];
+	$tempName =  $row['name'];
+	$templastName =  $row['lastName'];
+	echo "<option value='$tempID'> $tempID - $tempName $templastName  </option>" ;					
+	}				 				 
+}

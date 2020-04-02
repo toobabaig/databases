@@ -34,7 +34,7 @@
 	choose appointment to update
 		<select name="selectAppoitment">
 		 
-		  <option selected="selected" value="choose">-- choose appointment --</option>
+		 
 				
 		<?php
 			if ($checkResultAppointment >0){
@@ -43,7 +43,7 @@
 						$tempCID =  $row['AID'];
 						$tempCName =  $row['patientID'];
 						
-						echo "<option value='$tempCID'> id appointment: $tempCID with id of patient: $tempCName   </option>" ;					
+						echo "<option value='$tempCID'> id:  $tempCID    </option>" ;					
 					}				 				 
 				}
 		?>						
