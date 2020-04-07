@@ -17,10 +17,10 @@ directory  /www/groups/t/tv_comp353_4
 | database |  Concordia | php admin |
 | --- | --- | --- |
 | website | --- | http://www.phpmyadmin.co/ |
-| Server | --- | sql9.freemysqlhosting.net |
-| Name | --- | sql9331940 |
-| Username | --- | sql9331940 |
-| Password | --- | --- |
+| Server | --- | remotemysql.com |
+| Name | --- | KFXxzGBmGy |
+| Username | --- | KFXxzGBmGy |
+| Password | --- | 2mnQ9zJcAt |
 | Port number | --- | 3306 |
 
 
