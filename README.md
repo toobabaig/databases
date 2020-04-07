@@ -1,25 +1,28 @@
 Hello!
 
 
-| project google doc:|
-| ------------- | 
-|https://docs.google.com/document/d/1yXPzCBiviHJ_LrmkqZPKYJ5Z86LAYoulCcYuPzOJFC0/edit?usp=sharing|
+general links
+| name |  link | 
+|---|---|
+| project google doc:|https://docs.google.com/document/d/1yXPzCBiviHJ_LrmkqZPKYJ5Z86LAYoulCcYuPzOJFC0/edit?usp=sharing|
+|general info google doc |https://docs.google.com/document/d/1GJCNGOxUa985oAC3a8P_bKijgDska0vPYD658yM2FGc/edit?usp=sharing|
+|ER diagram  draw.io|https://app.diagrams.net/#G1MmI8C_7Q-2503YxB6PDP-jt49HvIlX1b|
+|web UI draw.io|https://drive.google.com/file/d/1qNHYXzzhp25ghCvP23WsKFIwacZWkKkN/view?usp=sharing|
 
+mysql login<br>
+mysql -h tvc353.encs.concordia.ca -u tvc353_4 -p tvc353_4<br>
+passwordad2020hd<br>
+directory  /www/groups/t/tv_comp353_4
+  
+| database |  Concordia | php admin |
+| --- | --- | --- |
+| website | --- | http://www.phpmyadmin.co/ |
+| Server | --- | sql9.freemysqlhosting.net |
+| Name | --- | sql9331940 |
+| Username | --- | sql9331940 |
+| Password | --- | --- |
+| Port number | --- | 3306 |
 
-here is the link of some information like user name, password to DB ect:
-https://docs.google.com/document/d/1GJCNGOxUa985oAC3a8P_bKijgDska0vPYD658yM2FGc/edit?usp=sharing
-
-here is the link for the draw.io ER diagram
-https://app.diagrams.net/#G1MmI8C_7Q-2503YxB6PDP-jt49HvIlX1b
-
-link for draw.io web UI is here
-https://drive.google.com/file/d/1qNHYXzzhp25ghCvP23WsKFIwacZWkKkN/view?usp=sharing
-
-shortcut:
-
------------loging in to database:
-mysql -h tvc353.encs.concordia.ca -u tvc353_4 -p tvc353_4
-password: ad2020hd
 
 -----------loging in to website:
 The base URL for your web pages is  	https://tvc353.encs.concordia.ca/ 
@@ -29,16 +32,8 @@ The password for web access is 		ad2020hd
 ----------directory of where the files are that are presented to the website directly:
  /www/groups/t/tv_comp353_4
 
-the ER model is trough the email Tooba sent us in draw io
 
---------- temporary DB being used while the school is closed:
 
-http://www.phpmyadmin.co/
-Server: 	sql9.freemysqlhosting.net
-Name: 			sql9331940
-Username: 		sql9331940
-Password: 	ZbhYnScRnZ
-Port number: 	3306
 
 ---- setup before transfering project to concordia database and server
 
