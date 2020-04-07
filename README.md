@@ -24,23 +24,14 @@ directory  /www/groups/t/tv_comp353_4
 | Port number | --- | 3306 |
 
 
------------loging in to website:
-The base URL for your web pages is  	https://tvc353.encs.concordia.ca/ 
-The User ID  for web access is		tvc353_4
-The password for web access is 		ad2020hd
+-----------loging in to website:<br>
+The base URL for your web pages is  	https://tvc353.encs.concordia.ca/ <br>
+The User ID  for web access is		tvc353_4<br>
+The password for web access is 		ad2020hd<br>
 
-----------directory of where the files are that are presented to the website directly:
- /www/groups/t/tv_comp353_4
-
-
+----------directory of where the files are that are presented to the website directly:<br>
+ /www/groups/t/tv_comp353_4<br>
 
 
----- setup before transfering project to concordia database and server
 
-the database we will be working on will be on phpadmin above
-we can use xampp as server, wich apache and mySQL modules
-and we can test our work individually on our own computer (local host) from a branch, then merge our work back into github main repository
 
-the reason we are using not working on concordias server and database directly is because
-school is closed untill the end of the month and computer unacessible, and using puTTY ssh tunnelling forces us to use prompt commands
-to edit/create folders, wich would take forever.
