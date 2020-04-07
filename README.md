@@ -17,10 +17,10 @@ directory  /www/groups/t/tv_comp353_4
 | database |  Concordia | php admin |
 | --- | --- | --- |
 | website | --- | http://www.phpmyadmin.co/ |
-| Server | --- | remotemysql.com |
-| Name | --- | KFXxzGBmGy |
-| Username | --- | KFXxzGBmGy |
-| Password | --- | 2mnQ9zJcAt |
+| Server | tvc353.encs.concordia.ca | remotemysql.com |
+| Name | tvc353_4 | KFXxzGBmGy |
+| Username | tvc353_4 | KFXxzGBmGy |
+| Password | ad2020hd | 2mnQ9zJcAt |
 | Port number | --- | 3306 |
 
 
