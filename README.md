@@ -11,7 +11,7 @@ general links
 
 mysql login<br>
 mysql -h tvc353.encs.concordia.ca -u tvc353_4 -p tvc353_4<br>
-passwordad2020hd<br>
+password ad2020hd<br>
 directory  /www/groups/t/tv_comp353_4
   
 | database |  Concordia | php admin |
