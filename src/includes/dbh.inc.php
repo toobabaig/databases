@@ -1,8 +1,8 @@
 <?php
-	$dbServername = "sql9.freemysqlhosting.net";
-	$dbUsername = "sql9328338";
-	$dbPassword  = "ZbhYnScRnZ";
-	$dbName = "sql9328338";
+	$dbServername = "remotemysql.com";
+	$dbUsername = "KFXxzGBmGy";
+	$dbPassword  = "2mnQ9zJcAt";
+	$dbName = "KFXxzGBmGy";
 
 	$conn = mysqli_connect($dbServername, $dbUsername ,$dbPassword ,$dbName);
 ?>

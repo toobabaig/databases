@@ -27,6 +27,7 @@ include_once 'includes/dbh.inc.php';
 
 	;";
 
+	
 	mysqli_query($conn, $mysqlInsertNew);
 		
 	$sqlAppointment = "select * from bill where BID = (SELECT MAX(BID)FROM bill);";
@@ -62,10 +63,19 @@ include_once 'includes/dbh.inc.php';
 				}												
 				 echo "bill successfully added, ID:  $BID";
 				 
+				 
+				 
+				 
 				 if(!empty($_POST['TID'])){
 			
-					foreach($_POST['TID'] as $treatmentID){					
-						$sqlTreamentList = "insert into treatmentList values ($temp2,$treatmentID,$BID);";
+					foreach($_POST['TID'] as $treatmentID){
+						
+						$sqlTreamentList = "
+						UPDATE treatmentList
+						SET bill_ID = $BID
+						WHERE appointmentID =$temp3 and treatmentID =  $treatmentID
+						;";
+													
 						
 						$resultTreamentList = mysqli_query($conn, $sqlTreamentList);
 						

@@ -215,11 +215,8 @@
 												echo "<input checked type='checkbox' id='$TID' name='TID[]' value='$TID' >$TID - $name $cost $</input> <br/>";																								
 											
 											}
-
 										}
-										if (strcmp($inputed,"false")==0){
-												echo "<input type='checkbox' id='$TID' name='TID[]' value='$TID' >$TID - $name $cost $</input> <br/>";																								
-										}
+										
 										
 									}
 							}
@@ -232,8 +229,15 @@
 					<?php echo "<td value='amountPaid' class = 'queryTable'>  <input type='text'  name='amountPaid' value = '$temp7' >  </td>";?>
 					
 					<?php 
-					$date = date('Y-m-d');
-					echo "<td value='dateOfTreatment' class = 'queryTable'>  <input type='text'  name='dateOfTreatment' value = '$date' >  </td>";
+					if (is_null($temp8)){
+						$temp8= 'appointment not done';
+					}
+
+					echo "<td value='dateOfTreatment' class = 'queryTable'> $temp8  </td>";
+					if (is_null($temp8)){
+						$temp8= 'null';
+					}
+					echo "<input hidden type='text'  name='dateOfTreatment' value = '$temp8' >";
 					?>
 					
 					

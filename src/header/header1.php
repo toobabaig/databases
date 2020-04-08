@@ -48,7 +48,7 @@
 			<button onclick="myFunctionBill()" class="dropbtn">Bill menu</button>
 			<div id="myDropdownBill" class="dropdown-content">
 				<a href="bill.getinfo.php"><font 	 	color = "#00ccff">get info</font></a>
-				<a href="bill.insertnew.php"><font 	 	color = "#bd9c28">insert new</font></a>
+				<a href="bill.insertnew0.php"><font 	 	color = "#bd9c28">insert new</font></a>
 				<a href="bill.update.php"> <font 		color = "#65db63">update</font></a>
 				<a href="bill.delete.php"><font 		color = "#de5b5b">delete</font></a>
 			</div>

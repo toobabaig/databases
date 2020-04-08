@@ -111,6 +111,7 @@ include_once 'includes/dbh.inc.php';
 				echo "<th class = 'queryTable'>dentalAssistantID</th>";
 				echo "<th class = 'queryTable'>receptionistID</th>";
 				echo "<th class = 'queryTable'>clinicID</th>";
+				echo "<th class = 'queryTable'>treamentID_________</th>";
 				echo "<th class = 'queryTable'>dateOfAppointmentScheduled</th>";
 				echo "<th class = 'queryTable'>dateOfAppointmentDone</th>";
 				echo "<th class = 'queryTable'>NUMmissedAppointment</th>";							
@@ -128,13 +129,153 @@ include_once 'includes/dbh.inc.php';
 					$temp8 =  $row['dateOfAppointmentDone'];
 					$temp9 =  $row['NUMmissedAppointment'];				
 							
+							
+							if (is_Null($temp8)){
+								$temp8 = "appointment not done";
+							};
+							
 					echo "<tr class = 'queryTable'>";		
 					echo "<td value='$temp1' class = 'queryTable'> $temp1  </td>" ;
-					echo "<td value='$temp2' class = 'queryTable'> $temp2  </td>" ;
-					echo "<td value='$temp3' class = 'queryTable'> $temp3  </td>" ;
-					echo "<td value='$temp3' class = 'queryTable'> $temp4  </td>" ;
-					echo "<td value='$temp5' class = 'queryTable'> $temp5  </td>" ;
-					echo "<td value='$temp6' class = 'queryTable'> $temp6  </td>" ;
+				?>
+				
+					<td value='$temp2' class = 'queryTable'>
+				<?php
+						$sqlTemp = "select * from patient where PID = $temp2;";
+						$resultTemp = mysqli_query($conn, $sqlTemp);
+						$checkResultTemp = mysqli_num_rows($resultTemp);
+						
+							if ($checkResultTemp >0){							
+									$row = mysqli_fetch_array($resultTemp);										
+									$tempCID =  $row['PID'];
+									$tempCName =  $row['name'];
+									$tempCLastName =  $row['lastName'];																												
+									echo " $tempCID - $tempCName $tempCLastName";																																									 
+							}
+				?>
+					</td>
+				
+					<td value='$temp3' class = 'queryTable'> 
+				<?php
+
+						$sqlTemp = "select * from dentist  where EID = $temp3;";
+						$resultTemp = mysqli_query($conn, $sqlTemp);
+						$checkResultTemp = mysqli_num_rows($resultTemp);
+						
+							if ($checkResultTemp >0){							
+									$row = mysqli_fetch_array($resultTemp);										
+									$tempCID =  $row['EID'];
+									$tempCName =  $row['name'];
+									$tempCLastName =  $row['lastName'];																												
+									echo " $temp3 - $tempCName $tempCLastName";																																									 
+							}else{
+									echo " $temp3 - [deletedDentist]";
+							}
+					?>
+					</td>				
+					<td value='$temp3' class = 'queryTable'> 
+					<?php
+
+						$sqlTemp = "select * from dentalAssistant  where EID = $temp4;";
+						$resultTemp = mysqli_query($conn, $sqlTemp);
+						$checkResultTemp = mysqli_num_rows($resultTemp);
+						
+							if ($checkResultTemp >0){							
+									$row = mysqli_fetch_array($resultTemp);										
+									$tempCID =  $row['EID'];
+									$tempCName =  $row['name'];
+									$tempCLastName =  $row['lastName'];																												
+									echo " $temp4 - $tempCName $tempCLastName";																																									 
+							}else{
+									echo " $temp4 - [deletedAssistant]";
+							}
+					?>
+
+
+					</td>
+				
+					<td value='$temp5' class = 'queryTable'>   
+					<?php
+
+						$sqlTemp = "select * from receptionist  where EID = $temp5;";
+						$resultTemp = mysqli_query($conn, $sqlTemp);
+						$checkResultTemp = mysqli_num_rows($resultTemp);
+						
+							if ($checkResultTemp >0){							
+									$row = mysqli_fetch_array($resultTemp);										
+									$tempCID =  $row['EID'];
+									$tempCName =  $row['name'];
+									$tempCLastName =  $row['lastName'];																												
+									echo " $temp5 - $tempCName $tempCLastName";																																									 
+							}else{
+									echo " $temp5 - [deletedReceptionist]";
+							}
+					?>
+					
+					
+					</td>
+				
+					<td value='$temp6' class = 'queryTable'> 
+					
+					<?php
+
+						$sqlTemp = "select * from clinic  where CID = $temp6;";
+						$resultTemp = mysqli_query($conn, $sqlTemp);
+						$checkResultTemp = mysqli_num_rows($resultTemp);
+						
+							if ($checkResultTemp >0){							
+									$row = mysqli_fetch_array($resultTemp);										
+									$tempCID =  $row['CID'];
+									$tempCName =  $row['clinicName'];
+																																				
+									echo " $temp6 - $tempCName";																																									 
+							}else{
+									echo " $temp6 - [deletedClinic]";
+							}
+					?>
+					
+					
+
+					</td>
+				
+					
+					<td value='treatmentID' class = 'queryTable'> 
+				<?php
+
+						$sqlTemp = "select * from treatmentList  where 	appointmentID = $temp1;";
+						$resultTemp = mysqli_query($conn, $sqlTemp);
+						$checkResultTemp = mysqli_num_rows($resultTemp);
+						
+							if ($checkResultTemp >0){							
+									while ( $row = mysqli_fetch_array($resultTemp)){
+																		
+										$tempTID =  $row['treatmentID'];
+										
+										$sqlTreament = "select * from treatment  where TID = $tempTID;";
+										$resultTreament = mysqli_query($conn, $sqlTreament);
+										$checkResultTreament = mysqli_num_rows($resultTreament);
+										
+										if ($checkResultTreament >0){
+											while ( $row = mysqli_fetch_array($resultTreament)){
+												$TID = $row['TID'];
+												$name = $row['name'];
+												echo "<input disabled checked type='checkbox' id='$TID' name='TID[]' value='$TID' >$TID - $name</input> <br/>";
+										
+											}
+										}
+									
+									
+									}																										
+																																																		 
+							}else{
+								echo "no treatment";
+							}
+					?>
+
+
+
+					</td>
+					
+				<?php
 					echo "<td value='$temp7' class = 'queryTable'> $temp7  </td>" ;
 					echo "<td value='$temp8' class = 'queryTable'> $temp8  </td>" ;
 					echo "<td value='$temp9' class = 'queryTable'> $temp9  </td>" ;
@@ -165,6 +306,7 @@ include_once 'includes/dbh.inc.php';
 				echo "<th class = 'queryTable'>dentalAssistantID</th>";
 				echo "<th class = 'queryTable'>receptionistID</th>";
 				echo "<th class = 'queryTable'>clinicID</th>";
+				echo "<th class = 'queryTable'>treamentID</th>";
 				echo "<th class = 'queryTable'>dateOfAppointmentScheduled</th>";
 				echo "<th class = 'queryTable'>dateOfAppointmentDone</th>";
 				echo "<th class = 'queryTable'>NUMmissedAppointment</th>";							
@@ -181,6 +323,11 @@ include_once 'includes/dbh.inc.php';
 					$temp7 =  $row['dateOfAppointmentScheduled'];
 					$temp8 =  $row['dateOfAppointmentDone'];
 					$temp9 =  $row['NUMmissedAppointment'];				
+							
+							if (is_Null($temp8)){
+								$temp8 = "appointment not done";
+							};
+							
 							
 					echo "<tr class = 'queryTable'>";		
 					echo "<td value='$temp1' class = 'queryTable'> $temp1  </td>" ;
