@@ -32,7 +32,7 @@ The password for web access is 		ad2020hd<br>
 ----------directory of where the files are that are presented to the website directly:<br>
  /www/groups/t/tv_comp353_4<br>
 
------loging in using shh mobaXterm
+-----loging in using shh mobaXterm<br>
 ssh -l concordia_netname  login.encs.concordia.ca 
 (then enter your password)
 
