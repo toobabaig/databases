@@ -25,6 +25,10 @@
 	$resultAppointment = mysqli_query($conn, $sqlAppointment);
 	$checkResultAppointment = mysqli_num_rows($resultAppointment);
 	
+	$sqlTreatment = "select * from treatment;";
+	$resultTreatment = mysqli_query($conn, $sqlTreatment);
+	$checkResultTreatment = mysqli_num_rows($resultTreatment);
+	
 	if ($checkResultAppointment >0){
 		while ( $row = mysqli_fetch_array($resultAppointment)){								
 			$temp1 =  $row['AID'];
@@ -62,6 +66,7 @@
 					<th class = 'queryTable'>dentalAssistantID</th>
 					<th class = 'queryTable'>receptionistID</th>
 					<th class = 'queryTable'>clinicID</th>
+						<th class = 'queryTable'>treatmentID______________</th>
 					<th class = 'queryTable'>dateOfAppointmentScheduled</th>
 					<th class = 'queryTable'>dateOfAppointmentDone</th>
 					<th class = 'queryTable'>NUMmissedAppointment</th>						
@@ -119,7 +124,7 @@
 						<select name="receptionistID">						  					  
 							<?php
 							if ($checkResultReceptionist >0){
-								echo "<option value='none'> none </option>" ;		
+									
 									while ( $row = mysqli_fetch_array($resultReceptionist)){								
 										$tempEID =  $row['EID'];
 										$tempPName =  $row['name'];
@@ -147,9 +152,27 @@
 							?>												 
 						</select>				
 					</td>
-					<td value='dateOfAppointmentScheduled' class = 'queryTable'>  <input type="text" name="dateOfAppointmentScheduled" value ="yyyy-mm-dd" >  </td>
-					<td value='dateOfAppointmentDone' class = 'queryTable'>  <input type="text"  name="dateOfAppointmentDone" value = "yyyy-mm-dd" >  </td>
-					<td value='NUMmissedAppointment' class = 'queryTable'>  <input type="text" name="NUMmissedAppointment" > </td>
+					<td value='treamentListID' class = 'queryTable' >  
+							<?php
+							if ($checkResultTreatment >0){
+								
+									while ( $row = mysqli_fetch_array($resultTreatment)){								
+										$TID =  $row['TID'];
+										$name =  $row['name'];
+										$cost =  $row['cost'];
+																		
+										echo "<input type='checkbox' id='$TID' name='TID[]' value='$TID' >$TID - $name $cost $</input> <br/>";																								
+									}
+							}
+							
+							?>	
+					</td>	
+					<?php
+					$date =  date("Y/m/d") ;
+					echo "<td value='dateOfAppointmentScheduled' class = 'queryTable'>  <input type='text' name='dateOfAppointmentScheduled' value ='$date' >  </td>";								
+					?>
+					<td value='dateOfAppointmentDone' class = 'queryTable'>  <input type='text'  name='dateOfAppointmentDone' value = 'yyyy-mm-dd' >  </td>					
+					<td value='NUMmissedAppointment' class = 'queryTable'>  <input type="text" name="NUMmissedAppointment"  value = "0"> </td>
 				
 
 					

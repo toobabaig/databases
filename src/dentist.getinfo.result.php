@@ -90,16 +90,20 @@ include_once 'includes/dbh.inc.php';
 					<?php echo "<td value='$temp1' class = 'queryTable'> $temp1  </td>" ;?>
 					<td value='$temp2' class = 'queryTable'> 
 <?php					
-						$sqlClinic = "select * from clinic where clinicID = $temp2;";
+						$sqlClinic = "select * from clinic where CID = $temp2;";
 						$resultClinic = mysqli_query($conn, $sqlClinic);
 						$checkResultClinic = mysqli_num_rows($resultClinic);
 						
 						if ($checkResultClinic>0){														
-							while ( $row = mysqli_fetch_array($resultDentist)){
+							while ( $row = mysqli_fetch_array($resultClinic)){
+									$tempID = $row['CID'];
+									$tempName = $row['clinicName'];
 									
-							
-							
-								echo "<td value='$temp3' class = 'queryTable'> $temp3  </td>" ;
+									
+								if (strcmp($temp2,$tempID)==0){								
+									echo  $tempID ." - " . $tempName;
+								}
+							}
 						}
 ?>
 					</td>

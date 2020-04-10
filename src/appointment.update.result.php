@@ -26,6 +26,10 @@
 	$resultAppointment = mysqli_query($conn, $sqlAppointment);
 	$checkResultAppointment = mysqli_num_rows($resultAppointment);
 	
+	$sqlTreatment= "select * from treatment  ;";
+	$resultTreatment= mysqli_query($conn, $sqlTreatment);
+	$checkResultTreatment= mysqli_num_rows($resultTreatment);
+	
 	
 	
 ?>
@@ -53,6 +57,7 @@
 					<th class = 'queryTable'>dentalAssistantID</th>
 					<th class = 'queryTable'>receptionistID</th>
 					<th class = 'queryTable'>clinicID</th>
+					<th class = 'queryTable' >treatmentID____________</th>	
 					<th class = 'queryTable'>dateOfAppointmentScheduled</th>
 					<th class = 'queryTable'>dateOfAppointmentDone</th>
 					<th class = 'queryTable'>NUMmissedAppointment</th>						
@@ -176,6 +181,46 @@
 				?>						
 						</select>			
 					</td>
+					<td value='treatmentID' class = 'queryTable'>  
+
+						<?php
+						
+						$sqlTreatmentList = " select  * from  treatmentList where  appointmentID = $temp1;";
+						$resultTreatmentList = mysqli_query($conn, $sqlTreatmentList);
+						$checkResultTreatmentList = mysqli_num_rows($resultTreatmentList);
+						
+					
+							if ($checkResultTreatment >0){
+								
+									while ( $row = mysqli_fetch_array($resultTreatment)){								
+										$TID =  $row['TID'];
+										$name =  $row['name'];
+										$cost =  $row['cost'];
+										$inputed = "false";
+										$resultTreatmentList = mysqli_query($conn, $sqlTreatmentList);
+										
+										while ( $row = mysqli_fetch_array($resultTreatmentList)){										
+											
+											$TIDL =  $row['treatmentID'];
+											if ( strcmp($TID,$TIDL)==0) {
+												$inputed = "true";
+												echo "<input checked type='checkbox' id='$TID' name='TID[]' value='$TID' >$TID - $name $cost $</input> <br/>";																								
+											
+											}
+
+										}
+										if (strcmp($inputed,"false")==0){
+												echo "<input type='checkbox' id='$TID' name='TID[]' value='$TID' >$TID - $name $cost $</input> <br/>";																								
+										}
+										
+									}
+							}
+							
+							?>
+
+
+
+					</td>		
 					<?php echo " <td value='dateOfAppointmentScheduled' class = 'queryTable'>  <input type='text' name='dateOfAppointmentScheduled' value = '$temp7' >  </td>";?>
 					<?php echo "<td value='dateOfAppointmentDone' class = 'queryTable'>  <input type='text'  name='dateOfAppointmentDone' value = '$temp8' >  </td>";?>
 					<?php echo "<td value='NUMmissedAppointment' class = 'queryTable'>  <input type='text'  name='NUMmissedAppointment' value = '$temp9' >  </td>";?>

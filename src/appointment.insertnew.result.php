@@ -12,9 +12,13 @@ include_once 'includes/dbh.inc.php';
 		$temp9 =  $_POST['NUMmissedAppointment'];		
 	}
 	
+	if (strcmp($temp8,"yyyy-mm-dd") || strcmp($temp8,"null") || strcmp($temp8,"none")  ){
+		$temp8= 'null';
+	}
+	
 	$mysqlInsertNew = " 
 	INSERT INTO appointment( patientID, dentistID, dentalAssistantID,  receptionistID,clinicID, dateOfAppointmentScheduled,dateOfAppointmentDone, NUMmissedAppointment)
-	VALUES ($temp2 ,$temp3,$temp4,$temp5,$temp6, '$temp7', '$temp8', $temp9)
+	VALUES ($temp2 ,$temp3,$temp4,$temp5,$temp6, '$temp7', $temp8, $temp9)
 
 	;";
 	
@@ -51,6 +55,15 @@ include_once 'includes/dbh.inc.php';
 				}
 				
 				 echo "appointment successfully added, ID:  $tempAID";
+				  if(!empty($_POST['TID'])){
+			
+					foreach($_POST['TID'] as $treatmentID){					
+						$sqlTreamentList = "insert into treatmentList values ($tempAID,$treatmentID,null);";
+						
+						$resultTreamentList = mysqli_query($conn, $sqlTreamentList);
+						
+							}
+						}
 				
 				
 			}else{
