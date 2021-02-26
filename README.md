@@ -1,7 +1,7 @@
 Hello!
 uploaded webpage into webpage: http://dentistmanagerwebsite.infinityfreeapp.com/index.php
 
-database have merged to new webhosting infinityfreeapp.com, outside concordias computer
+database and source files have moved to new webhosting infinityfreeapp.com, outside concordias computer, so info below is not longer in use
 
 general links
 | name |  link | 
