@@ -1,5 +1,5 @@
 Hello!
-uploaded webpage into webpage: http://dentistmanagerwebsite.infinityfreeapp.com/dentist.getinfo.php
+uploaded webpage into webpage: http://dentistmanagerwebsite.infinityfreeapp.com/index.php
 
 general links
 | name |  link | 
